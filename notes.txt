@@ -1,0 +1,7 @@
+    point = pygame.mouse.get_pos()
+    collide = area1.game_rects(screen).collidepoint(point)
+    
+    if collide:
+        area1.color = 'red'
+    else:
+        area1.color = 'white'

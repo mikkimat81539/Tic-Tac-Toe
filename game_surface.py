@@ -8,7 +8,14 @@ class Surface:
         self.height = height
         self.color = color
         pygame.init()
+        self.draw_rects = pygame.Rect(self.x_pos, self.y_pos, self.width, self.height)
     
     def game_rects(self, screen):
-        draw_rects = pygame.Rect(self.x_pos, self.y_pos, self.width, self.height)
-        return pygame.draw.rect(screen, self.color, draw_rects)
+        # draw_rects = pygame.Rect(self.x_pos, self.y_pos, self.width, self.height)
+        return pygame.draw.rect(screen, self.color, self.draw_rects)
+    
+    def check_hover(self, mouseDetect):
+        if self.draw_rects.collidepoint(mouseDetect):
+            self.color = 'green'  # Hover color
+        else:
+            self.color = 'white'
