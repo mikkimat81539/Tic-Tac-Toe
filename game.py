@@ -20,17 +20,21 @@ hort2 = Surface(150, 172, 174, 10, '#027559')
 # Define Area
 grid_area = gridArea.Areas()
 
+
 # Game loop
 running = True
 
 while running:
     for event in pygame.event.get():
-        # if event.type == pygame.MOUSEBUTTONDOWN:
-        #     mouse = pygame.mouse.get_pos()
-        #     print(mouse)
-
         if event.type == pygame.QUIT:
             running = False
+        
+        # Update and draw areas
+        if event.type == pygame.MOUSEBUTTONDOWN:
+            mouseDetect = pygame.mouse.get_pos()
+            for area in grid_area:
+                if area.check_hover(mouseDetect):
+                    area.game_rects(screen)
 
     # Render Game Here
 
@@ -41,12 +45,6 @@ while running:
     hort1.game_rects(screen)
     hort2.game_rects(screen)
 
-    # Update and draw areas
-    mouseDetect = pygame.mouse.get_pos()
-
-    for area in grid_area:
-        area.check_hover(mouseDetect)
-        area.game_rects(screen)
 
     # Flip game
     pygame.display.flip()
