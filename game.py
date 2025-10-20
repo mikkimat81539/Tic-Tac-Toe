@@ -17,19 +17,17 @@ vert2 = Surface(262, 60, 10, 175, '#027559')
 hort1 = Surface(150, 110, 174, 10, '#027559')
 hort2 = Surface(150, 172, 174, 10, '#027559')
 
-# Collision
+# Define Area
 grid_area = gridArea.Areas()
-
-print(grid_area[0])
 
 # Game loop
 running = True
 
 while running:
     for event in pygame.event.get():
-        if event.type == pygame.MOUSEBUTTONDOWN:
-            mouse = pygame.mouse.get_pos()
-            print(mouse)
+        # if event.type == pygame.MOUSEBUTTONDOWN:
+        #     mouse = pygame.mouse.get_pos()
+        #     print(mouse)
 
         if event.type == pygame.QUIT:
             running = False

@@ -18,4 +18,4 @@ class Surface:
         if self.draw_rects.collidepoint(mouseDetect):
             self.color = 'green'  # Hover color
         else:
-            self.color = 'white'
+            self.color = '#08D1B0'
